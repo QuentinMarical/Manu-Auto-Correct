@@ -1,3 +1,16 @@
+// ==UserScript==
+// @name         Manu Auto Correct
+// @namespace    https://raw.githubusercontent.com/Bo-Duke/Manu-Auto-Correct/master/js/correct.js
+// @version      3.2
+// @description  Bon alors déjà c'est M. Le Président.
+// @author       Bo-Duke
+// @match        http://*/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
 var textNode;
 const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT,null,false);
 const rExp = new RegExp('Emmanuel Macron|'+
@@ -17,3 +30,7 @@ while(textNode=walk.nextNode()) {
 }
 
 document.title = document.title.replace(rExp, 'Manu');
+
+
+
+})();
